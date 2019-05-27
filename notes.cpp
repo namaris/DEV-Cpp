@@ -5,6 +5,15 @@
 ./a.out nombrearchivo
 //Ejemepo:
 ./a.out Main.cpp
+
+//Añade comit GIT
+git add .
+
+//Comitear indicando el concepto del comit
+git comit -m "Comentario descriptivo del comit"
+
+//Git Push - Sube los cambios al repositorio
+git push  
   
                                      /*------------------------------------------/
    ---------------------------------/             Funciones C/C++               /---------------------------------
