@@ -1,6 +1,9 @@
 #include <iostream>
 #include <cstdlib>
 #include <cstdio>
+#include <ncurses.h>
+#include <cstring>
+#include <string>
 
 using namespace std;
 
@@ -14,6 +17,7 @@ void NumerosPrimos ();
 void SumaPares ();
 void BilletesCambioRef();
 void BusquedaBinaria();
+void Estructura();
 
 //Funcion Principal - Main
 int main ()
@@ -21,9 +25,9 @@ int main ()
     system("Color 1A");  
     cout << "\n********* SUMARIO APLICACIONES **********\n" << endl<< endl;
     cout << "Selecciona el programa a ejecutar:\n"<< endl;
-    cout << " 1. Calculadora \n 2. Fibonacci \n 3. Numeros Primos \n 4. Suma Numeros Pares \n 5. Cambio Billetes \n 6. Busqueda Binaria "<< endl;
+    cout << " 1. Calculadora \n 2. Fibonacci \n 3. Numeros Primos \n 4. Suma Numeros Pares \n 5. Cambio Billetes \n 6. Busqueda Binaria \n 7. Estructuras "<< endl;
     cin >> opt;
-    while (opt>6){
+    while (opt>7){
         cout << "\n Seleccion no valida. Vuelva a intentarlo.";
     cin >> opt;}
 
@@ -39,6 +43,8 @@ int main ()
         case 5: {BilletesCambioRef();}
             break;
         case 6: {BusquedaBinaria();}
+            break;
+        case 7: {Estructura();}
             break;
     }
 
@@ -192,6 +198,7 @@ void BilletesCambioRef(){
 	cout << "Billetes de 1: " << t6 << endl;
 }
 
+//6. Busqueda de un valor dentro de un vector ordenado usando el Algoritmo Busqueda Binaria
 void BusquedaBinaria(){
 
   int numero [] = {1,2,3,4,5};
@@ -230,3 +237,49 @@ bool flag=false;
     else {
       cout << "El numero NO fue encontrado.";
     }}
+
+//7. Creacion de una Estructura para rellenar con datos posteriormente y asignar a un grupo de categorias para imprimir el resultado final.
+void Estructura(){ 
+  
+  
+ struct corredor{ // Creacion de la estructura corredor con los datos Nombre, Edad, Sexo y Club.
+  char nombre [30];
+  int edad;
+  char sexo [2];
+  char club [30];
+ }var1;
+  
+  char categoria[20]; // Creacion de variable para almacenar la categoria resultante del corredor tras los inputs iniciales.
+  
+  /*-----------------------------------------------/
+  /  Iniciamos el programa solicitando los datos  /
+  /---------------------------------------------*/
+  cout << "Introducir nombre del corredor: " << endl;
+  scanf ("%29s",var1.nombre);
+  
+  cout << "Introducir edad del corredor: " << endl;
+  cin >> var1.edad;
+  
+  cout << "Introducir sexo del corredor: " << endl;
+  scanf ("%1s",var1.sexo);
+  
+  cout << "Introducir club del corredor: " << endl;
+  scanf ("%29s",var1.club);
+  
+    /*------------------------------------------/
+   /  Valoramos la edad para asignar categoria /
+  /------------------------------------------*/
+  
+  if (var1.edad<=18){
+           strcpy(categoria,"Juvenil");}
+  if (var1.edad>18 && var1.edad<=40 ){
+            strcpy(categoria,"Señor");}
+  if(var1.edad>40){
+            strcpy(categoria,"Veterano");}
+  
+  cout << "El corredor de nombre: " << var1.nombre << ", de " << var1.edad << " años, perteneciente al club " << var1.club << " participa en la categoria: " << categoria << endl;
+  
+  
+ 
+  
+}
