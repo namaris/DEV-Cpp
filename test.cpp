@@ -1,4 +1,4 @@
-// SHELL SORT ALGORITHM (BUSQUEDA SHELL)
+// SHELL SORT ALGORITHM (BUSQUEDA SHELL).
 
 /*1. Leer tamaño vector (input user)
 2. Calcular salto  = n/2 (int)
