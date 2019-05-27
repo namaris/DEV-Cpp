@@ -278,5 +278,7 @@ void Estructura(){
             strcpy(categoria,"Veterano");}
   
   cout << "El corredor de nombre: " << var1.nombre << ", de " << var1.edad << " años, perteneciente al club " << var1.club << " participa en la categoria: " << categoria << endl;
+ 
+  //cambio 1
   
  }
